@@ -25,7 +25,7 @@ export class ListaClientes {
     cliente.idCliente = this.listaClientes.length + 1
     cliente.nomeCliente = this.nome_cliente
     cliente.emailCliente = this.email_cliente
-    cliente.cpfCliene = this.cpf_cliente
+    cliente.cpfCliente = this.cpf_cliente
     cliente.dataCliente = this.data_cliente
     cliente.ufCliente = this.uf_cliente
     cliente.municipioCliente = this.municipio_cliente

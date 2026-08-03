@@ -14,7 +14,7 @@
         <input type="text" name="cpf" id="cpf" [(ngModel)]="cpf_cliente">
 
         <label for="data">Insira sua Data de nascimento</label>
-      
+
         <input type="date" name="data" id="data" [(ngModel)]="data_cliente">
 
         <label for="uf">Insira seu UF</label>
@@ -47,31 +47,36 @@
             <option value="SP">São Paulo</option>
             <option value="SE">Sergipe</option>
             <option value="TO">Tocantins</option>
-          </select>
+        </select>
 
         <label for="municipio">Insira seu Município</label>
         <input type="text" name="municipio" id="municipio" [(ngModel)]="municipio_cliente">
 
-        <button type="button" id="btnAdd"(click)="addClientes()">Adicionar</button>
-        <button type="button" id="btnLimpar"(click)="limparTudo()">Limpar tudo</button>
+        <button type="button" id="btnAdd" (click)="addClientes()">Adicionar</button>
+        <button type="button" id="btnLimpar" (click)="limparTudo()">Limpar tudo</button>
     </form>
 
     <div id="listar">
 
-        @for(elem of listaClientes; track elem.idCliente){
-        <span>
-            {{elem.nomeCliente}} <br>
-            {{elem.emailCliente}} <br>
-            {{elem.cpfCliene}} <br>
-            {{elem.dataCliente}}
-            {{elem.ufCliente}} <br>
-            {{elem.municipioCliente}} <br>
-        </span>
+        <div id="div-lista">
 
-        }@empty{
+            @for(elem of listaClientes; track elem.idCliente){
+            <div class="cliente">
+                <p><strong>Nome:</strong> {{elem.nomeCliente}}</p>
+                <p><strong>Email:</strong> {{elem.emailCliente}}</p>
+                <p><strong>CPF:</strong> {{elem.cpfCliente}}</p>
+                <p><strong>Nascimento:</strong> {{elem.dataCliente}}</p>
+                <p><strong>UF:</strong> {{elem.ufCliente}}</p>
+                <p><strong>Município:</strong> {{elem.municipioCliente}}</p>
+            </div>
 
-        <div class="div-item"> Nenhum Cliente cadastrado.</div>
-        }
+            }@empty{
+
+            <div class="div-item"> Nenhum Cliente cadastrado.</div>
+            }
+
+        </div>
 
     </div>
+
 </div>
