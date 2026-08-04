@@ -3,7 +3,7 @@ export class Cliente{
     nomeCliente?: string
     emailCliente?: string
     cpfCliente?: number
-    dataCliente?: number
+    dataCliente?: string
     ufCliente?: string
     municipioCliente?: string
     statusSelecionado: boolean = false

@@ -1,7 +1,18 @@
 <div id="div-form">
+   <div id="menu">
 
     <h4>CADASTRO CLIENTES</h4>
+ 
+    <div class="link">
 
+        <li>
+            <a href="#" routerLink="/lista">
+                Lista de Cadastros
+            </a>
+        </li>
+    </div>
+    
+</div>
     <form id="formulario">
 
         <label for="nome">Insira seu nome</label>
@@ -52,8 +63,8 @@
         <label for="municipio">Insira seu Município</label>
         <input type="text" name="municipio" id="municipio" [(ngModel)]="municipio_cliente">
 
-        <button type="button" id="btnAdd" (click)="addClientes()">Adicionar</button>
-        <button type="button" id="btnLimpar" (click)="limparTudo()">Limpar tudo</button>
+        <button type="button" id="btnAdd" class="btnAdd" (click)="addClientes()">Adicionar</button>
+        <button type="button" id="btnLimpar" class="btnLimpar" (click)="limparTudo()">Limpar tudo</button>
     </form>
 
     <div id="listar">
