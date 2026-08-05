@@ -2,34 +2,26 @@
    <div id="menu">
 
     <h4>CADASTRO CLIENTES</h4>
- 
-    <div class="link">
 
-        <li>
-            <a href="#" routerLink="/lista">
-                Lista de Cadastros
-            </a>
-        </li>
-    </div>
     
 </div>
     <form id="formulario">
 
         <label for="nome">Insira seu nome</label>
-        <input type="text" name="nome" id="nome" [(ngModel)]="nome_cliente">
+        <input type="text" name="nome" id="nome" [(ngModel)]="nome">
 
         <label for="email">Insira seu email</label>
-        <input type="email" name="email" id="email" [(ngModel)]="email_cliente">
+        <input type="email" name="email" id="email" [(ngModel)]="email">
 
         <label for="cpf">Insira seu CPF</label>
-        <input type="text" name="cpf" id="cpf" [(ngModel)]="cpf_cliente">
+        <input type="text" name="cpf" id="cpf" [(ngModel)]="cpf">
 
         <label for="data">Insira sua Data de nascimento</label>
 
-        <input type="date" name="data" id="data" [(ngModel)]="data_cliente">
+        <input type="date" name="data" id="data" [(ngModel)]="data">
 
         <label for="uf">Insira seu UF</label>
-        <select name="uf" id="uf" [(ngModel)]="uf_cliente">
+        <select name="uf" id="uf" [(ngModel)]="uf">
             <option value="">Selecione um estado</option>
             <option value="AC">Acre</option>
             <option value="AL">Alagoas</option>
@@ -61,33 +53,10 @@
         </select>
 
         <label for="municipio">Insira seu Município</label>
-        <input type="text" name="municipio" id="municipio" [(ngModel)]="municipio_cliente">
+        <input type="text" name="municipio" id="municipio" [(ngModel)]="municipio">
 
-        <button type="button" id="btnAdd" class="btnAdd" (click)="addClientes()">Adicionar</button>
-        <button type="button" id="btnLimpar" class="btnLimpar" (click)="limparTudo()">Limpar tudo</button>
+        <button type="button" id="btnAdd" class="btnAdd" (click)="addClientes()" routerLink = "/lista">Adicionar</button>
+        
     </form>
-
-    <div id="listar">
-
-        <div id="div-lista">
-
-            @for(elem of listaClientes; track elem.idCliente){
-            <div class="cliente">
-                <p><strong>Nome:</strong> {{elem.nomeCliente}}</p>
-                <p><strong>Email:</strong> {{elem.emailCliente}}</p>
-                <p><strong>CPF:</strong> {{elem.cpfCliente}}</p>
-                <p><strong>Nascimento:</strong> {{elem.dataCliente}}</p>
-                <p><strong>UF:</strong> {{elem.ufCliente}}</p>
-                <p><strong>Município:</strong> {{elem.municipioCliente}}</p>
-            </div>
-
-            }@empty{
-
-            <div class="div-item"> Nenhum Cliente cadastrado.</div>
-            }
-
-        </div>
-
-    </div>
 
 </div>

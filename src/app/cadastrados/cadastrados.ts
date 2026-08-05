@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PessoaService } from '../service/pessoa-service';
 import { Pessoa } from '../model/pessoa';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cadastrados',
-  imports: [RouterLink, Pessoa, PessoaService],
+  imports: [RouterLink, CommonModule, FormsModule],
   templateUrl: './cadastrados.html',
   styleUrl: './cadastrados.css',
 })
@@ -16,15 +18,16 @@ export class Cadastrados {
   cpf = 0.0
   data = ''
 
-  constructor(private pessoaService: Pessoa) { }
+  pessoa: Pessoa[] = []
 
-  salvar() {
-    this.pessoaService.adicionar({
-      id: this.id,
-      nome: this.nome,
-      email: this.email,
-      cpf: this.cpf,
-      data: this.data
-    });
+  constructor(private pessoaService: PessoaService) { }
+
+  ngOnInit() {
+    this.pessoa = this.pessoaService.listar();
   }
+
+  limparTudo() {
+    this.pessoa.length = 0;
+  }
+
 }

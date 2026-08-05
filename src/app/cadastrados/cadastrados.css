@@ -1,0 +1,38 @@
+h4{
+    justify-content: center;
+    text-align: center;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background-color: aliceblue;
+
+}
+#listar{
+
+        width: 900px;
+        min-height: 500px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: rgb(114, 150, 179);
+        border-radius: 10px;
+}
+#div-lista{
+    background-color: rgb(114, 150, 179);
+
+}
+.cliente{
+    background-color: rgba(255, 255, 255, 0.788);
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 10px;
+}
+button{
+    display: block;
+    margin: 30px auto;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+
+}

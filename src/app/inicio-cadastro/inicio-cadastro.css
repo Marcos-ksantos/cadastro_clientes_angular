@@ -1,0 +1,24 @@
+#inicio{
+    margin: 40px auto;
+    
+}
+
+h1{
+text-align: center;
+background-color: rgb(135, 164, 202);
+}
+
+#links{
+    margin: 40px auto;
+    text-align: center;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+h2 :hover{
+transform: translateY(-10px);
+background-color: rgba(218, 218, 218, 0.541);
+cursor: pointer;
+
+}

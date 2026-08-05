@@ -1,1 +1,27 @@
+
+<div id="listar">
+<h4>Lista de  clientes</h4>
+
+    <div id="div-lista">
+
+        @for(pessoa of pessoa; track pessoa.id){
+        <div class="cliente">
+            <p><strong>Nome:</strong> {{pessoa.nome}}</p>
+            <p><strong>Email:</strong> {{pessoa.email}}</p>
+            <p><strong>CPF:</strong> {{pessoa.cpf}}</p>
+            <p><strong>Nascimento:</strong> {{pessoa.data}}</p>
+            <p><strong>UF:</strong> {{pessoa.uf}}</p>
+            <p><strong>Município:</strong> {{pessoa.municipio}}</p>
+
+        </div>
+
+        }@empty{
+
+        <div class="div-item"> Nenhum Cliente cadastrado.</div>
+        }
+
+    </div>
 <button routerLink="/cadastro">Voltar</button>
+
+<button type="button"class="btnLimpar" (click)="limparTudo()">Limpar tudo</button>
+</div>

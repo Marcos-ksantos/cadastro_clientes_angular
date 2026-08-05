@@ -1,17 +1,20 @@
-import { injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Pessoa } from '../model/pessoa';
 
-@injectable(
-    provideIn: 'root'
-)
+@Injectable({
+    providedIn: 'root'
+})
 export class PessoaService {
-    private pessoas:Pessoa[] = []
+    private pessoa:Pessoa[] = []
 
-    adicionar(pessoas: Pessoa){
-        this.pessoas.push(pessoas)
+    adicionar(pessoa: Pessoa){
+        this.pessoa.push(pessoa)
     }
 
     listar(){
-        return this.pessoas
+        return this.pessoa
+    }
+    Limpar(){
+        this.pessoa = []
     }
 }
