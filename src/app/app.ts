@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { InicioCadastro } from './inicio-cadastro/inicio-cadastro';
+import { InicioCadastro } from './components/inicio-cadastro/inicio-cadastro';
 
 
 @Component({

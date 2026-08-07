@@ -1,0 +1,49 @@
+#home{
+    width: 680px ;
+    height: 600px;
+    display: flex;
+    align-items:center ;
+    text-align: center;
+    margin:10px  auto;
+    justify-content: center;
+    border: 2px solid rgb(110, 136, 167) ;
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.596);
+    transition: 0.4s;
+}
+#home:hover{
+    transform:translateY(-3px) ;
+    cursor: pointer;
+}
+#sla{
+    justify-content:center ;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 40px;
+}
+#sla span{
+    transition:0.3s;
+}
+#sla span:hover{
+    transform: translateY(-3px);
+    cursor:grab;
+}
+h1{
+    font-size: 100px;
+    color: rgb(84, 116, 163);
+    transition: 0.2s;
+}
+h1:hover{
+    transform: translateY(-5px);
+    cursor:grab;
+}
+h3{
+    font-size: 50px;
+    color: rgb(137, 185, 226);
+    transition: 0.3s;
+}
+h3:hover{
+    transform: translateY(-5px);
+    cursor:grab;
+}

@@ -55,7 +55,8 @@
         <label for="municipio">Insira seu Município</label>
         <input type="text" name="municipio" id="municipio" [(ngModel)]="municipio">
 
-        <button type="button" id="btnAdd" class="btnAdd" (click)="addClientes()" routerLink = "/lista">Adicionar</button>
+        <button type="button" id="btnAdd" class="btnAdd" (click)="save()" routerLink = "/lista">Adicionar</button>
+        <button type="button" id="btnLimpar" class="btnAdd" (click)="limpaForm()">Limpar formulário</button>
         
     </form>
 

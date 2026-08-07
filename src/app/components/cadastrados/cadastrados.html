@@ -1,0 +1,33 @@
+<div id="listar">
+    <h4>Lista de clientes</h4>
+
+    <div id="div-lista">
+
+        @for(elem of ngOnInit(); track elem.id ){
+        <div class="cliente">
+            <p><strong>Nome:</strong> {{elem.nome}}</p>
+            <p><strong>Email:</strong> {{elem.email}}</p>
+            <p><strong>CPF:</strong> {{elem.cpf}}</p>
+            <p><strong>Nascimento:</strong> {{elem.data}}</p>
+            <p><strong>UF:</strong> {{elem.uf}}</p>
+            <p><strong>Município:</strong> {{elem.municipio}}</p>
+
+            <div id="btn">
+
+                <button type="button" class="Excluir" (click)="excluir(elem)">Excluir</button>
+                <button type="button" class="Editar" (click)="buscarPorId(elem)">Editar</button>
+
+            </div>
+        </div>
+
+
+
+        }@empty{
+
+        <div class="div-item"> Nenhum Cliente cadastrado.</div>
+        }
+
+    </div>
+
+    <button class="voltar" routerLink="/cadastro">Voltar</button>
+</div>

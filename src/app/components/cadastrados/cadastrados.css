@@ -27,7 +27,7 @@ h4{
     border-radius: 10px;
     padding: 10px;
 }
-button{
+button.voltar{
     display: block;
     margin: 30px auto;
     padding: 12px 35px;
