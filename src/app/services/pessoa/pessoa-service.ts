@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Pessoa } from '../model/pessoa';
 import { of } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Pessoa } from '../../model/pessoa';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
+
 export class PessoaService {
     private pessoa: Pessoa[] = []
 

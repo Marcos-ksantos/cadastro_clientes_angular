@@ -1,63 +1,47 @@
 <div id="div-form">
-   <div id="menu">
-
+  <div id="menu">
     <h4>CADASTRO CLIENTES</h4>
+  </div>
+  <form id="formulario">
+    <label for="nome">Insira seu nome</label>
+    <input type="text" name="nome" id="nome" [(ngModel)]="nome" />
 
-    
-</div>
-    <form id="formulario">
+    <label for="email">Insira seu email</label>
+    <input type="email" name="email" id="email" [(ngModel)]="email" />
 
-        <label for="nome">Insira seu nome</label>
-        <input type="text" name="nome" id="nome" [(ngModel)]="nome">
+    <label for="cpf">Insira seu CPF</label>
+    <input type="text" name="cpf" id="cpf" [(ngModel)]="cpf" />
 
-        <label for="email">Insira seu email</label>
-        <input type="email" name="email" id="email" [(ngModel)]="email">
+    <label for="data">Insira sua Data de nascimento</label>
 
-        <label for="cpf">Insira seu CPF</label>
-        <input type="text" name="cpf" id="cpf" [(ngModel)]="cpf">
+    <input type="date" name="data" id="data" [(ngModel)]="data" />
 
-        <label for="data">Insira sua Data de nascimento</label>
+    <label for="uf">Insira seu UF</label>
+    <select name="uf" id="uf" [(ngModel)]="uf" (change)="carregaMunicipiosSelect()">
+      <option value="">Selecione um Estado</option>
 
-        <input type="date" name="data" id="data" [(ngModel)]="data">
+      @for (elem of listaUfs; track elem.id) {
+      <option [ngValue]="elem.id">{{ elem.sigla }} - {{ elem.nome }}</option>
+      }
+    </select>
 
-        <label for="uf">Insira seu UF</label>
-        <select name="uf" id="uf" [(ngModel)]="uf">
-            <option value="">Selecione um estado</option>
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraima</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
-        </select>
+    <label for="municipio">Insira seu Município</label>
+    <select type="text" name="municipio" id="municipio" [(ngModel)]="municipio" [disabled]="municipios.length === 0"
+      class="elem-form-02">
+      <option value="">Selecione um Município</option>
 
-        <label for="municipio">Insira seu Município</label>
-        <input type="text" name="municipio" id="municipio" [(ngModel)]="municipio">
+      @for (elem of municipios; track elem.id) {
+      <option [ngValue]="elem.nome">
+        {{ elem.nome }}
+      </option>
+      }
+    </select>
 
-        <button type="button" id="btnAdd" class="btnAdd" (click)="save()" routerLink = "/lista">Adicionar</button>
-        <button type="button" id="btnLimpar" class="btnAdd" (click)="limpaForm()">Limpar formulário</button>
-        
-    </form>
-
+    <button type="button" id="btnAdd" class="btnAdd" (click)="save()" routerLink="/lista">
+      Adicionar
+    </button>
+    <button type="button" id="btnLimpar" class="btnAdd" (click)="limpaForm()">
+      Limpar formulário
+    </button>
+  </form>
 </div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { PessoaService } from '../../service/pessoa-service';
+import { PessoaService } from '../../services/pessoa/pessoa-service';
 import { Pessoa } from '../../model/pessoa';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
