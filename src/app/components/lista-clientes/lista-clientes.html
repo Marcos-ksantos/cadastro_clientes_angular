@@ -21,7 +21,7 @@
       <option value="">Selecione um Estado</option>
 
       @for (elem of listaUfs; track elem.id) {
-      <option [ngValue]="elem.id">{{ elem.sigla }} - {{ elem.nome }}</option>
+      <option [ngValue]="elem.sigla">{{ elem.sigla }} - {{ elem.nome }}</option>
       }
     </select>
 
@@ -33,7 +33,7 @@
       @for (elem of municipios; track elem.id) {
       <option [ngValue]="elem.nome">
         {{ elem.nome }}
-      </option>
+      </option> 
       }
     </select>
 

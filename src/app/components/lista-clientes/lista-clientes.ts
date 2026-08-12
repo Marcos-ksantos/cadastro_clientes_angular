@@ -108,6 +108,7 @@ export class ListaClientes {
           }
         });
     }
+    this.carregaEstadosSelect()
   }
 
   save() {
@@ -162,7 +163,7 @@ export class ListaClientes {
     this.UfMunicipioServiceTs.listaUF()
       .subscribe({
         next: (dadosUf) => {
-          this.listaUfs = dadosUf
+          this.listaUfs = [...dadosUf].sort((a, b) => a.nome.localeCompare(b.nome))
         },
         error: (msgErro) => {
           console.log('Erro ao carregar o Estado', msgErro)
@@ -178,20 +179,21 @@ export class ListaClientes {
       return
     }
 
-    this.UfMunicipioServiceTs.listaMunicipios(Number(this.uf))
+    const objUf = this.listaUfs.find(elem =>  elem.sigla === this.uf )
+
+    this.UfMunicipioServiceTs.listaMunicipios(Number(objUf?.id))
       .subscribe({
         next: (dadosMunicipio) => {
           this.municipios = dadosMunicipio
         },
         error: (msgErro) => {
-          console.log('Erro ao carregar o Município', msgErro)
+          console.log('Erro ao carregar os municípios: ', msgErro)
         }
-      })
+      }
+      )
 
   }
-
 }
-
 
 
 /*cliente.idCliente = this.listaClientes.length + 1
@@ -216,5 +218,4 @@ this.municipio_cliente = ""
 limparTudo (){
 this.listaClientes = []
 }
-
-}*/
+*/
