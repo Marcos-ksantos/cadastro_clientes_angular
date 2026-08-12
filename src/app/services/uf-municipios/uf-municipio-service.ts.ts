@@ -13,13 +13,13 @@ export class UfMunicipioServiceTs {
     constructor(private http: HttpClient) { }
 
     listaUF(): Observable<Estado[]> {
-        const apiUrl = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados'
+        const apiUrl = `https://servicodados.ibge.gov.br/api/v1/localidades/estados`
 
         return this.http.get<Estado[]>(apiUrl)
     }
 
     listaMunicipios(idUf: number): Observable<Municipio[]> {
-        const apiUrl = 'http://servicodados.ibge.gov.br/api/v1/localidades/estados/${idUf}/municipios'
+        const apiUrl = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${idUf}/municipios`;
 
         return this.http.get<Municipio[]>(apiUrl)
     }
